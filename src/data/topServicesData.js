@@ -7,7 +7,7 @@ export const topServices = [
     increaseColor: 'var(--sap-orange)',
     forecast: '767.49 USD',
     forecastPct: 70,
-    status: '✔',
+    status: 'accept',
     statusColor: 'var(--sap-green)',
     barColor: 'var(--sap-green)'
   },
@@ -19,7 +19,7 @@ export const topServices = [
     increaseColor: 'inherit',
     forecast: '637.00 USD',
     forecastPct: 50,
-    status: '✔',
+    status: 'accept',
     statusColor: 'var(--sap-green)',
     barColor: 'var(--sap-green)'
   },
@@ -31,7 +31,7 @@ export const topServices = [
     increaseColor: 'var(--sap-orange)',
     forecast: '372.12 USD',
     forecastPct: 101,
-    status: '⚠️',
+    status: 'warning',
     statusColor: 'var(--sap-orange)',
     barColor: 'var(--sap-orange)'
   },
@@ -43,7 +43,7 @@ export const topServices = [
     increaseColor: 'inherit',
     forecast: '135.00 USD',
     forecastPct: 50,
-    status: '✔',
+    status: 'accept',
     statusColor: 'var(--sap-green)',
     barColor: 'var(--sap-green)'
   },
@@ -55,7 +55,7 @@ export const topServices = [
     increaseColor: 'inherit',
     forecast: '30.00 USD',
     forecastPct: 100,
-    status: '✔',
+    status: 'accept',
     statusColor: 'var(--sap-green)',
     barColor: 'var(--sap-green)'
   }

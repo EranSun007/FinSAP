@@ -1,3 +1,4 @@
+import Icon from '../../components/ui/Icon';
 import Card, { CardHeader } from '../../components/ui/Card';
 import { Table, TableHead, TableBody, TableRow, TableHeader, TableCell } from '../../components/ui/Table';
 import ProgressBar from '../../components/ui/ProgressBar';
@@ -40,7 +41,9 @@ function ForecastTable() {
                     color={service.barColor}
                     className="progress-bg-custom"
                   />
-                  <span className="status-icon" style={{ color: service.statusColor }}>{service.status}</span>
+                  <span className="status-icon" style={{ color: service.statusColor }}>
+                    <Icon name={service.status} size="medium" />
+                  </span>
                 </div>
               </TableCell>
             </TableRow>

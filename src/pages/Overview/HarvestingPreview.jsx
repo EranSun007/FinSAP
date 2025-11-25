@@ -1,3 +1,4 @@
+import Icon from '../../components/ui/Icon';
 import Card, { CardHeader } from '../../components/ui/Card';
 import { Table, TableHead, TableBody, TableRow, TableHeader, TableCell } from '../../components/ui/Table';
 import { harvestingData, licenseCosts } from '../../data/harvestingData';
@@ -52,7 +53,7 @@ function HarvestingPreview({ onViewAll }) {
         <TableBody>
           {top3.map((opp) => {
             const statusClass = opp.percentage >= 70 ? 'warning' : opp.percentage >= 40 ? 'medium' : 'high';
-            const statusIcon = opp.percentage >= 70 ? '⚠️' : opp.percentage >= 40 ? '⚡' : '✓';
+            const statusIconName = opp.percentage >= 70 ? 'warning' : opp.percentage >= 40 ? 'alert' : 'accept';
 
             return (
               <TableRow key={opp.key}>
@@ -76,7 +77,9 @@ function HarvestingPreview({ onViewAll }) {
                         />
                       </div>
                     </div>
-                    <span className="status-icon">{statusIcon}</span>
+                    <span className="status-icon">
+                      <Icon name={statusIconName} size="medium" />
+                    </span>
                   </div>
                 </TableCell>
               </TableRow>

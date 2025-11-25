@@ -3,10 +3,13 @@
 .costBreakdown {
   animation: fadeIn 0.3s ease-in-out;
   padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .mainCard {
   min-height: calc(100vh - 120px);
+  width: 100%;
 }
 
 .cardHeaderWrapper {
@@ -15,6 +18,8 @@
 
 .content {
   padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* View Mode Section */
@@ -354,13 +359,25 @@
   border-radius: 4px;
   border: 1px solid var(--sap-border-light, #e5e5e5);
   overflow-x: auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Cost Breakdown Table */
 .costBreakdownTable {
   width: 100%;
+  min-width: 1200px;
+  table-layout: fixed;
   border-collapse: collapse;
   font-size: 0.875rem;
+}
+
+.costBreakdownTable colgroup col:first-child {
+  width: 35%;
+}
+
+.costBreakdownTable colgroup col {
+  width: auto;
 }
 
 .costBreakdownTable thead th {

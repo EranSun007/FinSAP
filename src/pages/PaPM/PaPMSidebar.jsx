@@ -1,3 +1,4 @@
+import Icon from '../../components/ui/Icon';
 import { papmMetrics, papmCategories } from '../../data/papmMetricsData';
 import styles from '../../styles/pages/PaPM.module.css';
 
@@ -23,9 +24,9 @@ function PaPMSidebar({ visibleMetrics, scale, onScaleChange, onToggleMetric, onT
             const someVisible = catMetrics.some(m => visibleMetrics[m.key]);
 
             let statusClass = '';
-            let icon = '○';
-            if (allVisible) { statusClass = styles.active; icon = '✓'; }
-            else if (someVisible) { statusClass = styles.partial; icon = '◐'; }
+            let iconName = 'circle-task';
+            if (allVisible) { statusClass = styles.active; iconName = 'accept'; }
+            else if (someVisible) { statusClass = styles.partial; iconName = 'status-in-process'; }
 
             return (
               <button
@@ -33,7 +34,7 @@ function PaPMSidebar({ visibleMetrics, scale, onScaleChange, onToggleMetric, onT
                 className={`${styles.categoryBtn} ${statusClass}`}
                 onClick={() => onToggleCategory(cat)}
               >
-                {icon} {cat}
+                <Icon name={iconName} size="small" /> {cat}
               </button>
             );
           })}
@@ -55,7 +56,7 @@ function PaPMSidebar({ visibleMetrics, scale, onScaleChange, onToggleMetric, onT
                 }}
               >
                 <span style={{ color: isVisible ? metric.color : '#95a5a6' }}>
-                  {isVisible ? '👁️' : '👁️‍🗨️'}
+                  <Icon name={isVisible ? 'show' : 'hide'} size="medium" />
                 </span>
                 <div className={styles.metricInfo}>
                   <div 

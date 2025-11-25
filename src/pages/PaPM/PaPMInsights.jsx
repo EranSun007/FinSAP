@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Icon from '../../components/ui/Icon';
 import { papmInsights } from '../../data/papmInsightsData';
 import styles from '../../styles/pages/PaPM.module.css';
 
@@ -9,7 +10,7 @@ function PaPMInsights() {
   return (
     <div className={styles.papmInsights}>
       <div className={styles.insightsHeader}>
-        <h3>🔍 Key Observations</h3>
+        <h3><Icon name="search" size="medium" /> Key Observations</h3>
         <select 
           value={period}
           onChange={(e) => setPeriod(e.target.value)}

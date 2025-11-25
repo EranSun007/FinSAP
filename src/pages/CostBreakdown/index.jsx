@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Icon from '../../components/ui/Icon';
 import Card, { CardHeader } from '../../components/ui/Card';
 import CostBreakdownFilters from './CostBreakdownFilters';
 import CostBreakdownToolbar from './CostBreakdownToolbar';
@@ -62,30 +63,20 @@ function CostBreakdown() {
                 onClick={expandAll}
                 title="Expand all"
               >
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M8 3v10M3 8h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
+                <Icon name="expand-group" size="medium" />
               </button>
               <button 
                 className={styles.iconButton}
                 onClick={collapseAll}
                 title="Collapse all"
               >
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M3 8h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
+                <Icon name="collapse-group" size="medium" />
               </button>
               <button className={styles.iconButton} title="Open in new window">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M10 2h4v4M14 2L8 8M6 2H3a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-3"/>
-                </svg>
+                <Icon name="action" size="medium" />
               </button>
               <button className={styles.iconButton} title="More options">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                  <circle cx="8" cy="3" r="1.5"/>
-                  <circle cx="8" cy="8" r="1.5"/>
-                  <circle cx="8" cy="13" r="1.5"/>
-                </svg>
+                <Icon name="overflow" size="medium" />
               </button>
             </div>
           </div>

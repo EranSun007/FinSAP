@@ -92,7 +92,7 @@ export const papmMetrics = [
   // PaPM Model Types (Brandon's Brewery Model - L/P/F)
   {
     key: 'papm_model_lifd_gb',
-    name: '🍺 PaPM Model: L (LIFD) - 0.357 base',
+    name: 'PaPM Model: L (LIFD) - 0.357 base',
     color: '#1abc9c',
     category: 'PaPM Model Types (L/P/F)',
     unit: 'GB',
@@ -101,7 +101,7 @@ export const papmMetrics = [
   },
   {
     key: 'papm_model_psa_gb',
-    name: '🍺 PaPM Model: P (PSA) - 0.579 base',
+    name: 'PaPM Model: P (PSA) - 0.579 base',
     color: '#e67e22',
     category: 'PaPM Model Types (L/P/F)',
     unit: 'GB',
@@ -110,7 +110,7 @@ export const papmMetrics = [
   },
   {
     key: 'papm_model_profitability_gb',
-    name: '🍺 PaPM Model: F (Profitability) - 0.859 base',
+    name: 'PaPM Model: F (Profitability) - 0.859 base',
     color: '#c0392b',
     category: 'PaPM Model Types (L/P/F)',
     unit: 'GB',

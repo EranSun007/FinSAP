@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Icon from './Icon';
 import styles from '../../styles/components/Dropdown.module.css';
 
 function Dropdown({ label, children }) {
@@ -10,7 +11,9 @@ function Dropdown({ label, children }) {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <span className={styles.dropdownLabel}>{label} ▼</span>
+      <span className={styles.dropdownLabel}>
+        {label} <Icon name="slim-arrow-down" size="small" />
+      </span>
       {isOpen && (
         <div className={styles.dropdownContent}>
           {children}

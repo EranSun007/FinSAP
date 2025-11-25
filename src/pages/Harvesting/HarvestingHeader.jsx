@@ -1,3 +1,4 @@
+import Icon from '../../components/ui/Icon';
 import Button from '../../components/ui/Button';
 import styles from '../../styles/pages/Harvesting.module.css';
 
@@ -12,7 +13,9 @@ function HarvestingHeader({
   return (
     <div className={styles.harvestingHeader}>
       <div className={styles.headerTitleRow}>
-        <span className={styles.expandIcon}>⌄</span>
+        <span className={styles.expandIcon}>
+          <Icon name="navigation-down-arrow" size="medium" />
+        </span>
         <select 
           id="license-type-selector" 
           className={styles.licenseDropdown}
@@ -38,7 +41,9 @@ function HarvestingHeader({
         >
           Harvest
         </Button>
-        <span className={styles.expandIcon}>⤢</span>
+        <span className={styles.expandIcon}>
+          <Icon name="full-screen" size="medium" />
+        </span>
       </div>
     </div>
   );

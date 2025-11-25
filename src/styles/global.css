@@ -186,3 +186,9 @@ body {
   text-decoration: underline;
 }
 
+/* Icon helpers */
+.fa-solid {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+

@@ -4,7 +4,7 @@ export const papmInsights = {
     { title: 'HANA Stability', text: 'HANA Cloud metrics remain stable at ~75 GB average, showing time-averaged allocation', color: '#27ae60', bg: '#d5f4e6', textColor: '#155724' },
     { title: 'Storage Growth', text: 'PaPM storage memory grew from 45 GB to 76 GB throughout the month', color: '#16a085', bg: '#e8f5e9', textColor: '#004d40' },
     { title: 'HANA Cockpit Correlation', text: 'Real-time queries show Column Store spiking to 1,100+ GB on Oct 25, validating PaPM\'s peak', color: '#d35400', bg: '#fdecea', textColor: '#7b241c' },
-    { title: '🍺 Brewery Model (L/P/F)', text: 'Three PaPM model types show different growth patterns - F (Profitability) spikes highest on Oct 25', color: '#1abc9c', bg: '#d1f2eb', textColor: '#0e6655' }
+    { title: 'Brewery Model (L/P/F)', text: 'Three PaPM model types show different growth patterns - F (Profitability) spikes highest on Oct 25', color: '#1abc9c', bg: '#d1f2eb', textColor: '#0e6655' }
   ],
   'last-3-months': [
     { title: 'Quarterly Trend', text: 'Overall memory usage has increased by 15% over the last quarter, driven by new model deployments.', color: '#3498db', bg: '#d6eaf8', textColor: '#154360' },

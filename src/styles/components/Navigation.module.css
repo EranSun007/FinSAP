@@ -4,6 +4,9 @@
   border-bottom: 1px solid var(--sap-border);
   display: flex;
   gap: 2rem;
+  position: sticky;
+  top: 48px;
+  z-index: 90;
 }
 
 .navItem {
