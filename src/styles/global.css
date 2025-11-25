@@ -1,0 +1,187 @@
+:root {
+  --sap-bg: #f5f7fa;
+  --sap-white: #ffffff;
+  --sap-text: #32363a;
+  --sap-text-light: #6a6d70;
+  --sap-blue: #0a6ed1;
+  --sap-blue-dark: #004065;
+  --sap-border: #d9d9d9;
+  --sap-green: #107e3e;
+  --sap-orange: #d97706;
+  --sap-chart-teal: #008b8b;
+  --sap-chart-line: #1f2d3d;
+  --shadow-card: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: '72', 'Roboto', sans-serif;
+  background-color: var(--sap-bg);
+  color: var(--sap-text);
+  font-size: 14px;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Global utility classes */
+.service-name {
+  font-weight: 600;
+  color: var(--sap-blue);
+}
+
+.service-sub {
+  font-size: 0.75rem;
+  color: var(--sap-text-light);
+  font-weight: 400;
+}
+
+.cost-value {
+  font-weight: 600;
+  color: var(--sap-green);
+}
+
+.forecast-value {
+  font-weight: 600;
+  color: var(--sap-green);
+}
+
+.progress-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.progress-bg-custom {
+  flex: 1;
+  max-width: 80px;
+}
+
+.status-icon {
+  font-size: 1rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--sap-text);
+}
+
+.card-subtitle {
+  font-size: 0.8rem;
+  color: var(--sap-text-light);
+  margin-top: 0.25rem;
+}
+
+.chart-header-value {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--sap-green);
+}
+
+.chart-header-sub {
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--sap-text-light);
+}
+
+.chart-header-sub strong {
+  color: var(--sap-text);
+}
+
+/* Harvesting styles */
+.harvesting-opportunities-card {
+  background: var(--sap-white);
+  border-radius: 4px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.license-type-cell {
+  font-weight: 600;
+  color: var(--sap-blue);
+}
+
+.license-subtitle {
+  font-size: 0.75rem;
+  color: var(--sap-text-light);
+  margin-top: 0.25rem;
+}
+
+.user-count {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.savings-amount {
+  font-weight: 600;
+  color: var(--sap-green);
+  font-size: 1rem;
+}
+
+.status-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.status-progress {
+  flex: 1;
+  max-width: 100px;
+}
+
+.status-progress-bar {
+  height: 6px;
+  background-color: #e0e0e0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.status-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.status-progress-fill.high {
+  background-color: var(--sap-green);
+}
+
+.status-progress-fill.medium {
+  background-color: var(--sap-orange);
+}
+
+.status-progress-fill.warning {
+  background-color: #d04437;
+}
+
+.view-all-link {
+  color: var(--sap-blue);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.view-all-link:hover {
+  text-decoration: underline;
+}
+

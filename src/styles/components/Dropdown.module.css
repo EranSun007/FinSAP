@@ -1,0 +1,40 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+
+.dropdownLabel {
+  color: var(--sap-text);
+  font-weight: 400;
+}
+
+.dropdownContent {
+  display: block;
+  position: absolute;
+  background-color: var(--sap-white);
+  min-width: 240px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  top: 100%;
+  left: 0;
+  border-radius: 4px;
+  border: 1px solid var(--sap-border);
+  padding: 0.5rem 0;
+}
+
+.dropdownItem {
+  color: var(--sap-text);
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.dropdownItem:hover {
+  background-color: #f5f7fa;
+  color: var(--sap-blue);
+}
+
