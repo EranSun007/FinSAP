@@ -1,7 +1,7 @@
 import Dropdown, { DropdownItem } from '../ui/Dropdown';
 import styles from '../../styles/components/Navigation.module.css';
 
-function Navigation({ activeView, onNavigate }) {
+function Navigation({ activeView, onNavigate, isJouleOpen, onToggleJoule }) {
   const navItems = [
     { id: 'overview', label: 'Overview' },
     {
@@ -19,19 +19,12 @@ function Navigation({ activeView, onNavigate }) {
       id: 'billing-verification',
       label: 'Billing Verification',
       dropdown: [
+        { id: 'service-manager', label: 'Service Manager' },
         { id: 'invoices', label: 'Invoices' },
         { id: 'payment-history', label: 'Payment History' },
       ]
     },
-    {
-      id: 'cost-breakdown',
-      label: 'Cost Breakdown',
-      dropdown: [
-        { id: 'by-service', label: 'By Service' },
-        { id: 'by-region', label: 'By Region' },
-        { id: 'by-cost-center', label: 'By Cost Center' },
-      ]
-    },
+    { id: 'cost-breakdown', label: 'Cost Breakdown' },
     {
       id: 'credit-expenditure',
       label: 'Credit Expenditure',
@@ -67,6 +60,14 @@ function Navigation({ activeView, onNavigate }) {
               </DropdownItem>
             ))}
           </Dropdown>
+        ) : item.id === 'joule' ? (
+          <a
+            key={item.id}
+            className={`${styles.navItem} ${styles.jouleButton} ${isJouleOpen ? styles.active : ''}`}
+            onClick={onToggleJoule}
+          >
+            {item.label}
+          </a>
         ) : (
           <a
             key={item.id}

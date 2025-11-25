@@ -8,6 +8,8 @@ const PaPM = lazy(() => import('../../pages/PaPM'));
 const ServiceAndAssetManager = lazy(() => import('../../pages/ServiceAndAssetManager'));
 const Signavio = lazy(() => import('../../pages/Signavio'));
 const SACDashboard = lazy(() => import('../../pages/SACDashboard'));
+const ServiceManager = lazy(() => import('../../pages/BillingVerification/ServiceManager'));
+const CostBreakdown = lazy(() => import('../../pages/CostBreakdown'));
 
 function MainContainer({ activeView }) {
   const renderPage = () => {
@@ -24,6 +26,10 @@ function MainContainer({ activeView }) {
         return <Signavio />;
       case 'sac':
         return <SACDashboard />;
+      case 'service-manager':
+        return <ServiceManager />;
+      case 'cost-breakdown':
+        return <CostBreakdown />;
       default:
         return <Overview />;
     }

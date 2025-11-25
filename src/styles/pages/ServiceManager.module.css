@@ -1,0 +1,442 @@
+/* Service Manager Page Styles */
+
+.serviceManager {
+  animation: fadeIn 0.3s ease-in-out;
+  padding: 1rem;
+}
+
+.mainCard {
+  min-height: calc(100vh - 120px);
+}
+
+.content {
+  padding: 1rem;
+}
+
+/* Filter Bar Styles */
+.filterBar {
+  background-color: var(--sap-background-light, #fafafa);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--sap-border-light, #e5e5e5);
+}
+
+.filterSection {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filterLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--sap-text-dark, #32363a);
+  min-width: 60px;
+}
+
+.dateInput,
+.monthInput,
+.textInput,
+.selectInput {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--sap-border, #89919a);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  background-color: white;
+  min-width: 150px;
+  transition: border-color 0.2s;
+}
+
+.dateInput:focus,
+.monthInput:focus,
+.textInput:focus,
+.selectInput:focus {
+  outline: none;
+  border-color: var(--sap-primary, #0070f2);
+  box-shadow: 0 0 0 1px var(--sap-primary, #0070f2);
+}
+
+.clearButton {
+  background: none;
+  border: none;
+  color: var(--sap-text-light, #6a6d70);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  transition: color 0.2s;
+}
+
+.clearButton:hover {
+  color: var(--sap-error, #bb0000);
+}
+
+.filterActions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.goButton,
+.adaptButton,
+.clearAllButton {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  border-radius: 4px;
+  border: 1px solid var(--sap-border, #89919a);
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.goButton {
+  background-color: var(--sap-primary, #0070f2);
+  color: white;
+  border-color: var(--sap-primary, #0070f2);
+}
+
+.goButton:hover {
+  background-color: #0064d9;
+}
+
+.adaptButton:hover,
+.clearAllButton:hover {
+  background-color: var(--sap-background-light, #f5f5f5);
+  border-color: var(--sap-primary, #0070f2);
+}
+
+/* Adapt Filters Panel */
+.adaptFiltersPanel {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid var(--sap-border-light, #e5e5e5);
+  border-radius: 4px;
+}
+
+.adaptFiltersHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.adaptFiltersHeader h3 {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--sap-text-dark, #32363a);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--sap-text-light, #6a6d70);
+  padding: 0;
+  line-height: 1;
+}
+
+.closeButton:hover {
+  color: var(--sap-text-dark, #32363a);
+}
+
+.activeFiltersList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.activeFilter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  background-color: var(--sap-info-light, #e3f2fd);
+  border: 1px solid var(--sap-info, #0070f2);
+  border-radius: 16px;
+  font-size: 0.813rem;
+}
+
+.activeFilter button {
+  background: none;
+  border: none;
+  color: var(--sap-info, #0070f2);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Action Bar */
+.actionBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--sap-background-light, #fafafa);
+  border-radius: 4px;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actionButton {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--sap-border, #89919a);
+  background-color: white;
+  color: var(--sap-text-dark, #32363a);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.actionButton:hover {
+  background-color: var(--sap-background-light, #f5f5f5);
+  border-color: var(--sap-primary, #0070f2);
+}
+
+.viewOptions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.iconButton {
+  background: none;
+  border: 1px solid var(--sap-border-light, #e5e5e5);
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  color: var(--sap-text-dark, #32363a);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconButton:hover {
+  background-color: var(--sap-background-light, #f5f5f5);
+  border-color: var(--sap-primary, #0070f2);
+}
+
+/* Table Container */
+.tableContainer {
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid var(--sap-border-light, #e5e5e5);
+  overflow: hidden;
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--sap-border-light, #e5e5e5);
+  background-color: var(--sap-background-light, #fafafa);
+}
+
+.tableTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--sap-text-dark, #32363a);
+}
+
+.selectedInfo {
+  font-size: 0.875rem;
+  color: var(--sap-text-light, #6a6d70);
+}
+
+/* Table Styles */
+.serviceTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.serviceTable thead th {
+  background-color: var(--sap-background-light, #fafafa);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--sap-text-dark, #32363a);
+  border-bottom: 2px solid var(--sap-border-light, #e5e5e5);
+  white-space: nowrap;
+}
+
+.serviceTable tbody td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--sap-border-light, #e5e5e5);
+  color: var(--sap-text-dark, #32363a);
+}
+
+.tableRow:hover {
+  background-color: var(--sap-background-light, #fafafa);
+}
+
+.checkbox {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.serviceName {
+  font-weight: 500;
+  color: var(--sap-text-dark, #32363a);
+}
+
+.costCell {
+  font-family: monospace;
+  font-weight: 500;
+}
+
+.deltaCostCell {
+  font-family: monospace;
+}
+
+.deltaPositive {
+  color: var(--sap-success, #107e3e);
+}
+
+.deltaNegative {
+  color: var(--sap-error, #bb0000);
+}
+
+/* Chart Container */
+.chartContainer {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+  height: 20px;
+}
+
+.progressBar {
+  height: 100%;
+}
+
+.progressBarOverflow {
+  height: 100%;
+  margin-left: 2px;
+}
+
+.forecastPctCell {
+  font-weight: 600;
+}
+
+.overForecast {
+  color: var(--sap-error, #bb0000);
+}
+
+.rowActionButton {
+  background: none;
+  border: none;
+  color: var(--sap-text-light, #6a6d70);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.rowActionButton:hover {
+  color: var(--sap-primary, #0070f2);
+}
+
+/* Loading and Empty States */
+.loadingState,
+.emptyState {
+  padding: 3rem;
+  text-align: center;
+  color: var(--sap-text-light, #6a6d70);
+  font-size: 1rem;
+}
+
+.loadingState {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.errorMessage {
+  padding: 1rem;
+  background-color: var(--sap-error-light, #ffebee);
+  border: 1px solid var(--sap-error, #bb0000);
+  border-radius: 4px;
+  color: var(--sap-error-dark, #870000);
+  margin-bottom: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .filterSection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actionBar {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .actionButtons {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceManager {
+    padding: 0.5rem;
+  }
+
+  .content {
+    padding: 0.5rem;
+  }
+
+  .filterBar {
+    padding: 0.75rem;
+  }
+
+  .serviceTable {
+    font-size: 0.75rem;
+  }
+
+  .serviceTable thead th,
+  .serviceTable tbody td {
+    padding: 0.5rem;
+  }
+}
+

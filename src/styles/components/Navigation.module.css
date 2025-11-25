@@ -30,3 +30,28 @@
   background-color: var(--sap-blue);
 }
 
+.jouleButton {
+  padding: 0.5rem 1.25rem;
+  margin: 0.5rem 0;
+  border-radius: 20px;
+  background-color: var(--sap-joule);
+  color: var(--sap-white);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.jouleButton:hover {
+  background-color: #d63368;
+  box-shadow: 0 2px 8px rgba(233, 64, 122, 0.3);
+}
+
+.jouleButton.active {
+  background-color: #d63368;
+  color: var(--sap-white);
+  box-shadow: 0 2px 8px rgba(233, 64, 122, 0.4);
+}
+
+.jouleButton.active::after {
+  display: none;
+}
+
