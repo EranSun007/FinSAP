@@ -1,38 +1,38 @@
-import { lazy, Suspense } from 'react';
+import { Suspense } from 'react';
+import PropTypes from 'prop-types';
+import { routes, getDefaultView } from '../../config/routes.config';
 import styles from '../../styles/components/MainContainer.module.css';
 
-// Lazy load pages
-const Overview = lazy(() => import('../../pages/Overview'));
-const Harvesting = lazy(() => import('../../pages/Harvesting'));
-const PaPM = lazy(() => import('../../pages/PaPM'));
-const ServiceAndAssetManager = lazy(() => import('../../pages/ServiceAndAssetManager'));
-const Signavio = lazy(() => import('../../pages/Signavio'));
-const SACDashboard = lazy(() => import('../../pages/SACDashboard'));
-const ServiceManager = lazy(() => import('../../pages/BillingVerification/ServiceManager'));
-const CostBreakdown = lazy(() => import('../../pages/CostBreakdown'));
-
-function MainContainer({ activeView }) {
+function MainContainer({ activeView, onNavigate, selectedService, onServiceSelect }) {
   const renderPage = () => {
-    switch (activeView) {
-      case 'overview':
-        return <Overview />;
-      case 'harvesting':
-        return <Harvesting />;
-      case 'papm':
-        return <PaPM />;
-      case 'sam':
-        return <ServiceAndAssetManager />;
-      case 'signavio':
-        return <Signavio />;
-      case 'sac':
-        return <SACDashboard />;
-      case 'service-manager':
-        return <ServiceManager />;
-      case 'cost-breakdown':
-        return <CostBreakdown />;
-      default:
-        return <Overview />;
+    // Get the route configuration for the active view
+    const route = routes[activeView] || routes[getDefaultView()];
+
+    if (!route) {
+      // Fallback to default view if route not found
+      const defaultRoute = routes[getDefaultView()];
+      const DefaultComponent = defaultRoute.component;
+      return <DefaultComponent onNavigate={onNavigate} onServiceSelect={onServiceSelect} />;
     }
+
+    const PageComponent = route.component;
+
+    // Build props object based on what the component needs
+    const props = {};
+
+    if (route.requiresProps.includes('onNavigate')) {
+      props.onNavigate = onNavigate;
+    }
+
+    if (route.requiresProps.includes('onServiceSelect')) {
+      props.onServiceSelect = onServiceSelect;
+    }
+
+    if (route.requiresProps.includes('serviceId')) {
+      props.serviceId = selectedService;
+    }
+
+    return <PageComponent {...props} />;
   };
 
   return (
@@ -43,6 +43,17 @@ function MainContainer({ activeView }) {
     </div>
   );
 }
+
+MainContainer.propTypes = {
+  activeView: PropTypes.string.isRequired,
+  onNavigate: PropTypes.func.isRequired,
+  selectedService: PropTypes.string,
+  onServiceSelect: PropTypes.func.isRequired
+};
+
+MainContainer.defaultProps = {
+  selectedService: null
+};
 
 export default MainContainer;
 

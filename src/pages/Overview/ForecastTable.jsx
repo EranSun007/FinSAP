@@ -1,16 +1,26 @@
+import PropTypes from 'prop-types';
 import Icon from '../../components/ui/Icon';
 import Card, { CardHeader } from '../../components/ui/Card';
 import { Table, TableHead, TableBody, TableRow, TableHeader, TableCell } from '../../components/ui/Table';
 import ProgressBar from '../../components/ui/ProgressBar';
 import { topServices } from '../../data/topServicesData';
+import { VIEWS } from '../../constants/views';
 
-function ForecastTable() {
+function ForecastTable({ onNavigate, onServiceSelect }) {
+  const handleRowClick = (serviceName) => {
+    if (onServiceSelect) {
+      onServiceSelect(serviceName);
+    } else if (onNavigate) {
+      onNavigate(VIEWS.SERVICE_DETAILS);
+    }
+  };
+
   return (
     <Card>
-      <CardHeader 
+      <CardHeader
         title="Highest Credit Forecasts (Top 5)"
         subtitle="Global Account"
-        action={<div style={{ color: 'var(--sap-blue)', fontSize: '0.8rem', cursor: 'pointer' }}>View All</div>}
+        action={<div style={{ color: 'var(--sap-blue)', fontSize: '0.8rem', cursor: 'pointer' }} onClick={() => onNavigate && onNavigate(VIEWS.SERVICE_DETAILS)}>View All</div>}
       />
       <Table>
         <TableHead>
@@ -24,7 +34,12 @@ function ForecastTable() {
         </TableHead>
         <TableBody>
           {topServices.map((service, index) => (
-            <TableRow key={index}>
+            <TableRow
+              key={index}
+              onClick={() => handleRowClick(service.name)}
+              style={{ cursor: 'pointer' }}
+              className="hover-row"
+            >
               <TableCell>
                 <div className="service-name">{service.name}</div>
                 <div className="service-sub">{service.sub}</div>
@@ -35,9 +50,9 @@ function ForecastTable() {
               <TableCell>
                 <div className="progress-wrapper">
                   <div style={{ fontSize: '0.75rem', width: '30px' }}>{service.forecastPct}%</div>
-                  <ProgressBar 
-                    value={service.forecastPct} 
-                    max={100} 
+                  <ProgressBar
+                    value={service.forecastPct}
+                    max={100}
                     color={service.barColor}
                     className="progress-bg-custom"
                   />
@@ -53,6 +68,16 @@ function ForecastTable() {
     </Card>
   );
 }
+
+ForecastTable.propTypes = {
+  onNavigate: PropTypes.func,
+  onServiceSelect: PropTypes.func
+};
+
+ForecastTable.defaultProps = {
+  onNavigate: undefined,
+  onServiceSelect: undefined
+};
 
 export default ForecastTable;
 

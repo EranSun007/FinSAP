@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import Icon from './Icon';
 import styles from '../../styles/components/Dropdown.module.css';
 
@@ -6,7 +7,7 @@ function Dropdown({ label, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div 
+    <div
       className={styles.dropdown}
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
@@ -23,6 +24,11 @@ function Dropdown({ label, children }) {
   );
 }
 
+Dropdown.propTypes = {
+  label: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired
+};
+
 export function DropdownItem({ children, onClick }) {
   return (
     <a className={styles.dropdownItem} onClick={onClick}>
@@ -30,6 +36,11 @@ export function DropdownItem({ children, onClick }) {
     </a>
   );
 }
+
+DropdownItem.propTypes = {
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func.isRequired
+};
 
 export default Dropdown;
 

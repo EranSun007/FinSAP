@@ -1,4 +1,4 @@
-import Card, { CardHeader } from '../components/ui/Card';
+import Card, { CardHeader } from '../../components/ui/Card';
 
 function SACDashboard() {
   return (
