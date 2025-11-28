@@ -32,3 +32,7 @@
   background-color: #e5f0fa;
 }
 
+/* Styles specifically for taller rows in ForecastTable */
+.tallRow td {
+    padding: 1.25rem 0; /* Increased padding from 0.75rem */
+}

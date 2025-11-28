@@ -5,6 +5,7 @@ import { Table, TableHead, TableBody, TableRow, TableHeader, TableCell } from '.
 import ProgressBar from '../../components/ui/ProgressBar';
 import { topServices } from '../../data/topServicesData';
 import { VIEWS } from '../../constants/views';
+import styles from '../../styles/components/Table.module.css';
 
 function ForecastTable({ onNavigate, onServiceSelect }) {
   const handleRowClick = (serviceName) => {
@@ -18,7 +19,7 @@ function ForecastTable({ onNavigate, onServiceSelect }) {
   return (
     <Card>
       <CardHeader
-        title="Highest Credit Forecasts (Top 5)"
+        title="Highest Credit Forecasts (Top 3)"
         subtitle="Global Account"
         action={<div style={{ color: 'var(--sap-blue)', fontSize: '0.8rem', cursor: 'pointer' }} onClick={() => onNavigate && onNavigate(VIEWS.SERVICE_DETAILS)}>View All</div>}
       />
@@ -33,12 +34,12 @@ function ForecastTable({ onNavigate, onServiceSelect }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {topServices.map((service, index) => (
+          {topServices.slice(0, 3).map((service, index) => (
             <TableRow
               key={index}
               onClick={() => handleRowClick(service.name)}
               style={{ cursor: 'pointer' }}
-              className="hover-row"
+              className={`hover-row ${styles.tallRow}`}
             >
               <TableCell>
                 <div className="service-name">{service.name}</div>

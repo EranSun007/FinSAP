@@ -22,7 +22,7 @@ ChartJS.register(
   Legend
 );
 
-function BarLineChart({ days, btpeaData, businessAIData }) {
+function BarLineChart({ days, btpeaData, businessAIData, legendPosition = 'bottom' }) {
   const chartData = {
     labels: days,
     datasets: [
@@ -30,7 +30,10 @@ function BarLineChart({ days, btpeaData, businessAIData }) {
         type: 'bar',
         label: 'BTP EA Cost',
         data: btpeaData.costData,
-        backgroundColor: '#008b8b',
+        backgroundColor: (context) => {
+            const index = context.dataIndex;
+            return index >= btpeaData.costData.length - 4 ? 'rgba(0, 139, 139, 0.5)' : '#008b8b';
+        },
         order: 3
       },
       {
@@ -40,6 +43,14 @@ function BarLineChart({ days, btpeaData, businessAIData }) {
         borderColor: '#005f5f',
         borderWidth: 2,
         pointRadius: 2,
+        segment: {
+            borderColor: (ctx) => {
+                if (ctx.p0DataIndex >= btpeaData.forecastData.length - 4) {
+                    return 'rgba(0, 95, 95, 0.5)';
+                }
+                return undefined;
+            }
+        },
         order: 1,
         tension: 0.1
       },
@@ -47,7 +58,10 @@ function BarLineChart({ days, btpeaData, businessAIData }) {
         type: 'bar',
         label: 'Business AI Cost',
         data: businessAIData.costData,
-        backgroundColor: '#9b59b6',
+        backgroundColor: (context) => {
+            const index = context.dataIndex;
+            return index >= businessAIData.costData.length - 4 ? 'rgba(155, 89, 182, 0.5)' : '#9b59b6';
+        },
         order: 4
       },
       {
@@ -57,6 +71,14 @@ function BarLineChart({ days, btpeaData, businessAIData }) {
         borderColor: '#6c3483',
         borderWidth: 2,
         pointRadius: 2,
+        segment: {
+            borderColor: (ctx) => {
+                if (ctx.p0DataIndex >= businessAIData.forecastData.length - 4) {
+                    return 'rgba(108, 52, 131, 0.5)';
+                }
+                return undefined;
+            }
+        },
         order: 2,
         tension: 0.1
       }
@@ -68,12 +90,13 @@ function BarLineChart({ days, btpeaData, businessAIData }) {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'right',
-        align: 'start',
+        position: legendPosition,
+        align: 'center',
         labels: {
           usePointStyle: true,
           boxWidth: 8,
-          font: { size: 11 }
+          font: { size: 11 },
+          padding: 20
         }
       }
     },

@@ -18,8 +18,8 @@ function Overview({ onNavigate, onServiceSelect }) {
         <HarvestingPreview onViewAll={handleViewAllHarvesting} />
       </div>
       <div className={styles.bottomGrid}>
-        <LicenseUtilizationTile />
         <CostForecast />
+        <LicenseUtilizationTile />
       </div>
     </div>
   );
