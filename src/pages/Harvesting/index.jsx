@@ -54,6 +54,7 @@ function Harvesting() {
         <HarvestingSidebar 
           activeFilter={activeFilter}
           onFilterChange={setActiveFilter}
+          licenseType={licenseType}
         />
         <div className={styles.harvestingMain}>
           <InactiveUsersTable
@@ -61,12 +62,14 @@ function Harvesting() {
             selectedIndices={selectedInactive}
             onToggle={toggleInactive}
             onToggleAll={toggleAllInactive}
+            licenseType={licenseType}
           />
           <NoLogonUsersTable
             users={currentData.noLogOnUsers}
             selectedIndices={selectedNoLogon}
             onToggle={toggleNoLogon}
             onToggleAll={toggleAllNoLogon}
+            licenseType={licenseType}
           />
         </div>
       </div>

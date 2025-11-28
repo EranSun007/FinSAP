@@ -14,12 +14,171 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
 }
 
 .headerTitleRow {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+
+/* Header Controls */
+.headerControls {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.controlItem {
+  display: flex;
+  align-items: center;
   gap: 0.5rem;
+}
+
+.controlLabel {
+  font-size: 0.875rem;
+  color: var(--sap-text);
+  white-space: nowrap;
+}
+
+/* License Utilization Badge */
+.utilizationBadge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.utilizationHigh {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.utilizationMedium {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.utilizationLow {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Inactivity Threshold Control - Step Input */
+.stepInput {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid #89919a;
+  border-radius: 4px;
+  background: var(--sap-white);
+  overflow: hidden;
+  height: 32px;
+}
+
+.stepInputButton {
+  width: 32px;
+  height: 100%;
+  border: none;
+  background: #f7f7f7;
+  color: #0854a0;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.stepInputButton:hover:not(:disabled) {
+  background: #ededed;
+}
+
+.stepInputButton:active:not(:disabled) {
+  background: #e5e5e5;
+}
+
+.stepInputButton:disabled {
+  color: #89919a;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.stepInputField {
+  width: 60px;
+  border: none;
+  border-left: 1px solid #89919a;
+  border-right: 1px solid #89919a;
+  padding: 0 0.5rem;
+  font-size: 0.875rem;
+  text-align: center;
+  outline: none;
+  background: var(--sap-white);
+  color: var(--sap-text);
+  font-family: inherit;
+}
+
+.stepInputField:focus {
+  outline: none;
+}
+
+.stepInput:focus-within {
+  border-color: #0854a0;
+  box-shadow: 0 0 0 1px #0854a0;
+}
+
+/* Orphaned Accounts Toggle */
+.toggleLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggleCheckbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggleSwitch {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.toggleSwitch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.toggleCheckbox:checked + .toggleSwitch {
+  background: var(--sap-blue);
+}
+
+.toggleCheckbox:checked + .toggleSwitch::after {
+  transform: translateX(20px);
 }
 
 .licenseDropdown {
@@ -29,7 +188,7 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
+  padding: 0;
   border-radius: 4px;
   transition: background 0.2s ease;
 }
@@ -86,23 +245,211 @@
   border-left: 4px solid var(--sap-blue);
 }
 
+/* Sidebar sections with checkboxes */
+.sidebarSection {
+  margin: 0.5rem 0;
+}
+
+.sectionHeader {
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--sap-text);
+  transition: background 0.2s ease;
+}
+
+.sectionHeader:hover {
+  background: #f0f0f0;
+}
+
+.sectionCheckbox {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.sectionContent {
+  padding-left: 1rem;
+}
+
+.sectionItems {
+  padding-left: 1rem;
+}
+
+.sectionItem {
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--sap-text);
+  transition: background 0.2s ease;
+}
+
+.sectionItem:hover {
+  background: #f0f0f0;
+}
+
+.itemCheckbox {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.sectionItem label {
+  cursor: pointer;
+  flex: 1;
+  user-select: none;
+}
+
+/* License Allocation Chart */
+.licenseAllocationChart {
+  padding: 1rem 1.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chartContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.sidebarSeparator {
+  height: 1px;
+  background: var(--sap-border);
+  margin: 1rem 0;
+}
+
+.assignmentTrendChart {
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legendDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+
+.chartTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--sap-text);
+  margin: 0 0 1rem 0;
+}
+
+.chartContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.pieChart {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.assignedArc {
+  transition: stroke-dasharray 0.3s ease;
+}
+
+.chartCenterText {
+  font-size: 1rem;
+  font-weight: 700;
+  fill: var(--sap-text);
+}
+
+.chartCenterSubtext {
+  font-size: 0.625rem;
+  fill: var(--sap-text-secondary);
+  font-weight: 500;
+}
+
+.chartLegend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--sap-text);
+}
+
+.legendColorAssigned,
+.legendColorUnassigned {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.legendColorAssigned {
+  background-color: #0a6ed1;
+}
+
+.legendColorUnassigned {
+  background-color: #e0e0e0;
+}
+
+.legendLabel {
+  font-size: 0.75rem;
+  color: var(--sap-text);
+}
+
+/* Trend Chart */
+.trendChart {
+  margin-top: 1.5rem;
+  padding: 1rem 0.5rem 0;
+  border-top: 1px solid var(--sap-border);
+}
+
+.trendSvg {
+  width: 100%;
+  height: auto;
+}
+
+.axisLabel {
+  font-size: 0.625rem;
+  fill: var(--sap-text-secondary);
+  font-weight: 500;
+}
+
 .harvestingMain {
   flex: 1;
   display: flex;
+  flex-direction: column;
   gap: 20px;
   padding: 20px;
   background: var(--sap-bg);
-  overflow-x: auto;
+  overflow-y: auto;
 }
 
 .harvestingTableSection {
-  flex: 1;
   background: var(--sap-white);
   border: 1px solid var(--sap-border);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  min-width: 400px;
 }
 
 .harvestingTableSection h3 {
@@ -112,10 +459,131 @@
   font-weight: 600;
   border-bottom: 1px solid var(--sap-border);
   background: #f7f7f7;
+  flex-shrink: 0;
 }
 
 .tableScrollContainer {
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: auto;
   flex: 1;
+  /* Header row (~40px) + 5 data rows (~40px each) = ~240px */
+  max-height: 280px;
+}
+
+/* Table header styling */
+.harvestingTableSection :global(.table) thead th {
+  padding: 0.75rem 1rem !important;
+  text-align: left;
+}
+
+/* Checkbox column - header and cells */
+.harvestingTableSection :global(.table) thead th:first-child,
+.harvestingTableSection :global(.table) tbody td:first-child {
+  width: 48px !important;
+  min-width: 48px !important;
+  max-width: 48px !important;
+  text-align: center !important;
+  padding: 0.75rem 16px !important;
+}
+
+/* Table body cell styling */
+.harvestingTableSection :global(.table) tbody td {
+  padding: 0.75rem 1rem !important;
+}
+
+/* Checkbox styling */
+.harvestingTableSection input[type="checkbox"] {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/* Status labels */
+.statusLabel {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.statusActive {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.statusInactive {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.statusApproved {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.statusNotApproved {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Active/Not Active badges */
+.activeRed {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-block;
+  white-space: nowrap;
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.notActiveGreen {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-block;
+  white-space: nowrap;
+  background-color: #d4edda;
+  color: #155724;
+}
+
+/* Manager Approval badges */
+.managerApprovalGreen {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-block;
+  white-space: nowrap;
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.managerApprovalRed {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-block;
+  white-space: nowrap;
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Non-harvestable rows */
+.notHarvestableRow {
+  opacity: 0.5;
+  background-color: #f5f5f5;
+}
+
+.notHarvestableRow input[type="checkbox"] {
+  cursor: not-allowed;
 }
 
