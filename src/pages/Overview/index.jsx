@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import ForecastTable from './ForecastTable';
 import HarvestingPreview from './HarvestingPreview';
-import ForecastBreakdown from './ForecastBreakdown';
+import LicenseUtilizationTile from './LicenseUtilizationTile';
 import CostForecast from './CostForecast';
 import { VIEWS } from '../../constants/views';
 import styles from '../../styles/pages/Overview.module.css';
@@ -18,7 +18,7 @@ function Overview({ onNavigate, onServiceSelect }) {
         <HarvestingPreview onViewAll={handleViewAllHarvesting} />
       </div>
       <div className={styles.bottomGrid}>
-        <ForecastBreakdown />
+        <LicenseUtilizationTile />
         <CostForecast />
       </div>
     </div>
@@ -31,4 +31,3 @@ Overview.propTypes = {
 };
 
 export default Overview;
-
