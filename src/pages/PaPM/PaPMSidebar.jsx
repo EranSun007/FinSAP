@@ -1,8 +1,17 @@
+import { useState } from 'react';
 import Icon from '../../components/ui/Icon';
 import { papmMetrics, papmCategories } from '../../data/papmMetricsData';
 import styles from '../../styles/pages/PaPM.module.css';
 
 function PaPMSidebar({ visibleMetrics, scale, onScaleChange, onToggleMetric, onToggleCategory }) {
+  const [expandedCategories, setExpandedCategories] = useState(
+    papmCategories.reduce((acc, cat) => ({ ...acc, [cat]: true }), {})
+  );
+
+  const toggleExpand = (cat) => {
+    setExpandedCategories(prev => ({ ...prev, [cat]: !prev[cat] }));
+  };
+
   return (
     <div className={styles.papmSidebar}>
       <div className={styles.papmControls}>
@@ -17,11 +26,12 @@ function PaPMSidebar({ visibleMetrics, scale, onScaleChange, onToggleMetric, onT
           </div>
         </div>
 
-        <div className={styles.categoryToggles}>
+        <div className={styles.accordionContainer}>
           {papmCategories.map(cat => {
             const catMetrics = papmMetrics.filter(m => m.category === cat);
             const allVisible = catMetrics.every(m => visibleMetrics[m.key]);
             const someVisible = catMetrics.some(m => visibleMetrics[m.key]);
+            const isExpanded = expandedCategories[cat];
 
             let statusClass = '';
             let iconName = 'circle-task';
@@ -29,53 +39,73 @@ function PaPMSidebar({ visibleMetrics, scale, onScaleChange, onToggleMetric, onT
             else if (someVisible) { statusClass = styles.partial; iconName = 'status-in-process'; }
 
             return (
-              <button
-                key={cat}
-                className={`${styles.categoryBtn} ${statusClass}`}
-                onClick={() => onToggleCategory(cat)}
-              >
-                <Icon name={iconName} size="small" /> {cat}
-              </button>
-            );
-          })}
-        </div>
-
-        <div className={styles.metricGrid}>
-          {papmMetrics.map(metric => {
-            const isVisible = visibleMetrics[metric.key];
-            const activeClass = isVisible ? styles.active : '';
-
-            return (
-              <button
-                key={metric.key}
-                className={`${styles.metricBtn} ${activeClass}`}
-                onClick={() => onToggleMetric(metric.key)}
-                style={{
-                  borderColor: isVisible ? metric.color : '#ddd',
-                  background: isVisible ? `${metric.color}15` : 'white'
-                }}
-              >
-                <span style={{ color: isVisible ? metric.color : '#95a5a6' }}>
-                  <Icon name={isVisible ? 'show' : 'hide'} size="medium" />
-                </span>
-                <div className={styles.metricInfo}>
-                  <div 
-                    className={styles.metricName}
-                    style={{ color: isVisible ? metric.color : '#95a5a6' }}
+              <div key={cat} className={styles.accordionGroup}>
+                <div className={styles.accordionHeader}>
+                  <div
+                    className={styles.accordionTitle}
+                    onClick={() => toggleExpand(cat)}
                   >
-                    {metric.name}
+                    <Icon
+                      name="slim-arrow-down"
+                      size="small"
+                      className={isExpanded ? styles.iconExpanded : styles.iconCollapsed}
+                    />
+                    <span>{cat}</span>
                   </div>
-                  <div className={styles.metricMeta}>{metric.category} • {metric.unit}</div>
+                  <button
+                    className={`${styles.categoryToggleBtn} ${statusClass}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onToggleCategory(cat);
+                    }}
+                    title={allVisible ? "Hide All" : "Show All"}
+                  >
+                    <Icon name={iconName} size="small" />
+                  </button>
                 </div>
-                <div
-                  style={{
-                    width: '20px',
-                    height: '0',
-                    borderBottom: metric.strokeDasharray ? '2px dashed' : '3px solid',
-                    borderColor: isVisible ? metric.color : '#ddd'
-                  }}
-                />
-              </button>
+
+                {isExpanded && (
+                  <div className={styles.accordionContent}>
+                    {catMetrics.map(metric => {
+                      const isVisible = visibleMetrics[metric.key];
+                      const activeClass = isVisible ? styles.active : '';
+
+                      return (
+                        <button
+                          key={metric.key}
+                          className={`${styles.metricBtn} ${activeClass}`}
+                          onClick={() => onToggleMetric(metric.key)}
+                          style={{
+                            borderColor: isVisible ? metric.color : '#ddd',
+                            background: isVisible ? `${metric.color}15` : 'white'
+                          }}
+                        >
+                          <span style={{ color: isVisible ? metric.color : '#95a5a6' }}>
+                            <Icon name={isVisible ? 'show' : 'hide'} size="medium" />
+                          </span>
+                          <div className={styles.metricInfo}>
+                            <div
+                              className={styles.metricName}
+                              style={{ color: isVisible ? metric.color : '#95a5a6' }}
+                            >
+                              {metric.name}
+                            </div>
+                            <div className={styles.metricMeta}>{metric.unit}</div>
+                          </div>
+                          <div
+                            style={{
+                              width: '20px',
+                              height: '0',
+                              borderBottom: metric.strokeDasharray ? '2px dashed' : '3px solid',
+                              borderColor: isVisible ? metric.color : '#ddd'
+                            }}
+                          />
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
             );
           })}
         </div>

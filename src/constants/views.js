@@ -39,8 +39,11 @@ export const VIEWS = {
 
   // Other
   MONITORING_ALERTING: 'monitoring-alerting',
-  COST_OPTIMIZATION: 'cost-optimization',
   SERVICE_DETAILS: 'service-details',
+
+  // Cost Optimization
+  RIGHTSIZING: 'rightsizing',
+  APPLICATIONS_UTILIZATION: 'applications-utilization',
 
   // Special
   JOULE: 'joule'
@@ -53,7 +56,8 @@ export const NAV_GROUPS = {
   SAAS_SUBSCRIPTIONS: 'saas-subscriptions',
   BILLING_VERIFICATION: 'billing-verification',
   CREDIT_EXPENDITURE: 'credit-expenditure',
-  CROSS_CHARGING: 'cross-charging'
+  CROSS_CHARGING: 'cross-charging',
+  COST_OPTIMIZATION: 'cost-optimization'
 };
 
 /**

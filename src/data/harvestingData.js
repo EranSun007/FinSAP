@@ -69,12 +69,39 @@ export const harvestingData = {
       { user: 'WHARRIS', email: 'wendy.harris@demo-industries.com', license: 'HCM Analytics Professional' },
       { user: 'XMARTIN', email: 'xavier.martin@demo-industries.com', license: 'HCM Analytics Standard' }
     ]
+  },
+  'dynamic-forms': {
+    inactiveUsers: [
+      { timestamp: 'Oct 15, 2024 09:30:00', user: 'AGARCIA', email: 'antonio.garcia@demo-industries.com' },
+      { timestamp: 'Oct 28, 2024 14:15:00', user: 'BSMITH', email: 'bethany.smith@demo-industries.com' },
+      { timestamp: 'Nov 5, 2024 11:00:00', user: 'CJOHNSON', email: 'carlos.johnson@demo-industries.com' },
+      { timestamp: 'Nov 18, 2024 16:45:00', user: 'DWANG', email: 'diana.wang@demo-industries.com' },
+      { timestamp: 'Dec 2, 2024 08:30:00', user: 'ENGUYEN', email: 'ethan.nguyen@demo-industries.com' },
+      { timestamp: 'Dec 14, 2024 13:00:00', user: 'FLOPEZ', email: 'fiona.lopez@demo-industries.com' },
+      { timestamp: 'Jan 3, 2025 10:15:00', user: 'GKUMAR', email: 'gaurav.kumar@demo-industries.com' },
+      { timestamp: 'Jan 16, 2025 15:30:00', user: 'HPATEL', email: 'hannah.patel@demo-industries.com' },
+      { timestamp: 'Jan 28, 2025 12:00:00', user: 'ILEE', email: 'isaac.lee@demo-industries.com' },
+      { timestamp: 'Feb 8, 2025 09:45:00', user: 'JMARTINEZ', email: 'julia.martinez@demo-industries.com' }
+    ],
+    noLogOnUsers: [
+      { user: 'KCHEN', email: 'kevin.chen@demo-industries.com', license: 'Mobile Forms Professional' },
+      { user: 'LWILSON', email: 'laura.wilson@demo-industries.com', license: 'Mobile Forms Professional' },
+      { user: 'MBROWN', email: 'marcus.brown@demo-industries.com', license: 'Mobile Forms Standard' },
+      { user: 'NKIM', email: 'natalie.kim@demo-industries.com', license: 'Mobile Forms Standard' },
+      { user: 'ODAVIS', email: 'omar.davis@demo-industries.com', license: 'Mobile Forms Professional' },
+      { user: 'PROBERTS', email: 'priya.roberts@demo-industries.com', license: 'Mobile Forms Standard' },
+      { user: 'QTHOMPSON', email: 'quinn.thompson@demo-industries.com', license: 'Mobile Forms Professional' },
+      { user: 'RSINGH', email: 'raj.singh@demo-industries.com', license: 'Mobile Forms Standard' },
+      { user: 'SWHITE', email: 'sara.white@demo-industries.com', license: 'Mobile Forms Professional' }
+    ]
   }
 };
 
+// License costs configuration
 export const licenseCosts = {
   'sac': { name: 'SAP Analytics Cloud Licenses', subtitle: 'Analytics Cloud', cost: 45 },
   'signavio': { name: 'Signavio Licenses', subtitle: 'Process Intelligence', cost: 35 },
-  'business-ai': { name: 'Business AI - HCM package', subtitle: 'Human Capital Management', cost: 50 }
+  'business-ai': { name: 'Business AI - HCM package', subtitle: 'Human Capital Management', cost: 50 },
+  'dynamic-forms': { name: 'Dynamic Forms with SAP Mobile Execution', subtitle: 'Mobile Execution', cost: 40 }
 };
 

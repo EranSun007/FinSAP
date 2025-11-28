@@ -91,12 +91,43 @@ export function generatePapmData() {
     };
   });
 
+  // Cloud ALM Data (Correlated with PaPM activity)
+  const cloudAlmData = papmData.map((p, i) => {
+    const isCalcDay = p.day === 25;
+
+    // Memory Utilization correlates with Peak Calculation Memory
+    // Base around 45%, spiking to 85% on calc days
+    const baseUtil = 45;
+    const utilSpike = isCalcDay ? 40 : (Math.random() * 10 - 5);
+    const memoryUtilization = Math.min(100, Math.max(0, baseUtil + utilSpike + (i * 0.2)));
+
+    // Avg Query Duration correlates with complexity
+    // Base 150ms, spikes to 800ms+ on calc days
+    const baseDuration = 150;
+    const durationSpike = isCalcDay ? 650 : (Math.random() * 50 - 25);
+    const avgQueryDuration = baseDuration + durationSpike;
+
+    // Query Volume correlates with activity
+    // Scaled down to fit chart (approx 400-1000 range)
+    const baseVolume = 400;
+    const volumeSpike = isCalcDay ? 600 : (Math.random() * 50 - 25);
+    const queryVolume = baseVolume + volumeSpike + (i * 5);
+
+    return {
+      day: p.day,
+      calm_memory_utilization: memoryUtilization,
+      calm_avg_query_duration: avgQueryDuration,
+      calm_query_volume: queryVolume
+    };
+  });
+
   // Merge all data sources
   return papmData.map((p, i) => ({
     ...p,
     ...hanaCloudData[i],
     ...hanaCockpitData[i],
-    ...papmModelTypesData[i]
+    ...papmModelTypesData[i],
+    ...cloudAlmData[i]
   }));
 }
 

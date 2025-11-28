@@ -77,35 +77,90 @@
   cursor: pointer;
 }
 
-.categoryToggles {
+.accordionContainer {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: 12px;
 }
 
-.categoryBtn {
-  width: 100%;
-  text-align: left;
-  padding: 8px 16px;
+.accordionGroup {
+  border: 1px solid #ddd;
   border-radius: 8px;
-  border: 2px solid #bdc3c7;
+  overflow: hidden;
   background: white;
-  color: #2c3e50;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: #f8f9fa;
+  border-bottom: 1px solid transparent;
   transition: all 0.2s;
 }
 
-.categoryBtn.active {
-  background: #d5f4e6;
-  border-color: #27ae60;
+.accordionGroup:has(.accordionContent) .accordionHeader {
+  border-bottom-color: #eee;
 }
 
-.categoryBtn.partial {
-  background: #fef5e7;
-  border-color: #f39c12;
+.accordionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+  cursor: pointer;
+  flex: 1;
+  user-select: none;
+}
+
+.accordionTitle:hover {
+  color: #3498db;
+}
+
+.iconExpanded {
+  transform: rotate(0deg);
+  transition: transform 0.2s;
+}
+
+.iconCollapsed {
+  transform: rotate(-90deg);
+  transition: transform 0.2s;
+}
+
+.categoryToggleBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  color: #95a5a6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.categoryToggleBtn:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.categoryToggleBtn.active {
+  color: #27ae60;
+}
+
+.categoryToggleBtn.partial {
+  color: #f39c12;
+}
+
+.accordionContent {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: white;
 }
 
 .metricGrid {

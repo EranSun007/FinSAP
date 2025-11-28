@@ -68,9 +68,13 @@ export const navigationConfig = [
     type: 'direct'
   },
   {
-    id: VIEWS.COST_OPTIMIZATION,
+    id: NAV_GROUPS.COST_OPTIMIZATION,
     label: 'Cost Optimization',
-    type: 'direct'
+    type: 'dropdown',
+    items: [
+      { id: VIEWS.RIGHTSIZING, label: 'Rightsizing & Waste Optimization' },
+      { id: VIEWS.APPLICATIONS_UTILIZATION, label: 'Applications Utilization' },
+    ]
   },
   {
     id: VIEWS.JOULE,

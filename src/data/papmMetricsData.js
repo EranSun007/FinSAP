@@ -2,7 +2,7 @@ export const papmMetrics = [
   // PaPM Metrics
   {
     key: 'total_peak_memory',
-    name: 'PaPM: Total Peak Memory',
+    name: 'Total Peak Memory',
     color: '#e74c3c',
     category: 'PaPM',
     unit: 'GB',
@@ -10,7 +10,7 @@ export const papmMetrics = [
   },
   {
     key: 'hana_storage_memory_gb_sm',
-    name: 'PaPM: Storage Memory (SM)',
+    name: 'Storage Memory (SM)',
     color: '#3498db',
     category: 'PaPM',
     unit: 'GB',
@@ -18,7 +18,7 @@ export const papmMetrics = [
   },
   {
     key: 'hana_peak_calculation_memory_gb_sm',
-    name: 'PaPM: Peak Calculation Memory (SM)',
+    name: 'Peak Calculation Memory (SM)',
     color: '#f39c12',
     category: 'PaPM',
     unit: 'GB',
@@ -27,7 +27,7 @@ export const papmMetrics = [
   // HANA Cloud Metrics (UDM)
   {
     key: 'hc_compute_memory_gb',
-    name: 'HANA Cloud: Compute Memory (avg)',
+    name: 'Compute Memory (avg)',
     color: '#16a085',
     category: 'HANA Cloud (UDM)',
     unit: 'GB',
@@ -36,7 +36,7 @@ export const papmMetrics = [
   },
   {
     key: 'hc_storage_gb',
-    name: 'HANA Cloud: Storage (avg)',
+    name: 'Storage (avg)',
     color: '#9b59b6',
     category: 'HANA Cloud (UDM)',
     unit: 'GB',
@@ -45,7 +45,7 @@ export const papmMetrics = [
   },
   {
     key: 'capacity_units',
-    name: 'HANA Cloud: Capacity Units (daily)',
+    name: 'Capacity Units (daily)',
     color: '#27ae60',
     category: 'HANA Cloud (UDM)',
     unit: 'CU',
@@ -54,7 +54,7 @@ export const papmMetrics = [
   },
   {
     key: 'hc_compute_vcpu',
-    name: 'HANA Cloud: vCPU Count',
+    name: 'vCPU Count',
     color: '#c0392b',
     category: 'HANA Cloud (UDM)',
     unit: 'vCPUs',
@@ -64,7 +64,7 @@ export const papmMetrics = [
   // HANA Cockpit System Views (Real-time queries)
   {
     key: 'hana_column_store_gb',
-    name: 'HANA Cockpit: Column Store Memory',
+    name: 'Column Store Memory',
     color: '#d35400',
     category: 'HANA Cockpit (Live)',
     unit: 'GB',
@@ -73,7 +73,7 @@ export const papmMetrics = [
   },
   {
     key: 'hana_papm_tables_gb',
-    name: 'HANA Cockpit: PaPM Tables (M_CS_TABLES)',
+    name: 'PaPM Tables (M_CS_TABLES)',
     color: '#2980b9',
     category: 'HANA Cockpit (Live)',
     unit: 'GB',
@@ -82,7 +82,7 @@ export const papmMetrics = [
   },
   {
     key: 'hana_heap_memory_gb',
-    name: 'HANA Cockpit: Heap Memory',
+    name: 'Heap Memory',
     color: '#8e44ad',
     category: 'HANA Cockpit (Live)',
     unit: 'GB',
@@ -92,7 +92,7 @@ export const papmMetrics = [
   // PaPM Model Types (Brandon's Brewery Model - L/P/F)
   {
     key: 'papm_model_lifd_gb',
-    name: 'PaPM Model: L (LIFD) - 0.357 base',
+    name: 'LIFD Model',
     color: '#1abc9c',
     category: 'PaPM Model Types (L/P/F)',
     unit: 'GB',
@@ -101,7 +101,7 @@ export const papmMetrics = [
   },
   {
     key: 'papm_model_psa_gb',
-    name: 'PaPM Model: P (PSA) - 0.579 base',
+    name: 'PSA Model',
     color: '#e67e22',
     category: 'PaPM Model Types (L/P/F)',
     unit: 'GB',
@@ -110,14 +110,39 @@ export const papmMetrics = [
   },
   {
     key: 'papm_model_profitability_gb',
-    name: 'PaPM Model: F (Profitability) - 0.859 base',
+    name: 'Profitability Model',
     color: '#c0392b',
     category: 'PaPM Model Types (L/P/F)',
     unit: 'GB',
     strokeWidth: 2,
     strokeDasharray: [10, 2]
   },
+  // Cloud ALM Metrics
+  {
+    key: 'calm_memory_utilization',
+    name: 'Memory Utilization',
+    color: '#8e44ad',
+    category: 'Cloud ALM',
+    unit: '%',
+    strokeWidth: 2
+  },
+  {
+    key: 'calm_avg_query_duration',
+    name: 'Avg Query Duration',
+    color: '#e67e22',
+    category: 'Cloud ALM',
+    unit: 'ms',
+    strokeWidth: 2
+  },
+  {
+    key: 'calm_query_volume',
+    name: 'Query Volume',
+    color: '#2980b9',
+    category: 'Cloud ALM',
+    unit: 'Queries',
+    strokeWidth: 2
+  }
 ];
 
-export const papmCategories = ['PaPM', 'PaPM Model Types (L/P/F)', 'HANA Cloud (UDM)', 'HANA Cockpit (Live)'];
+export const papmCategories = ['PaPM', 'PaPM Model Types (L/P/F)', 'HANA Cloud (UDM)', 'HANA Cockpit (Live)', 'Cloud ALM'];
 

@@ -25,6 +25,8 @@ const SACDashboard = lazy(() => import('../pages/SACDashboard'));
 const ServiceManager = lazy(() => import('../pages/ServiceManager'));
 const CostBreakdown = lazy(() => import('../pages/CostBreakdown'));
 const ServiceDetails = lazy(() => import('../pages/ServiceDetails'));
+const RightsizingOptimization = lazy(() => import('../pages/CostOptimization/RightsizingPage'));
+const ApplicationsUtilization = lazy(() => import('../pages/CostOptimization/ApplicationsUtilizationPage'));
 
 /**
  * Routes map view IDs to components and their required props
@@ -65,6 +67,14 @@ export const routes = {
   [VIEWS.SERVICE_DETAILS]: {
     component: ServiceDetails,
     requiresProps: ['serviceId']
+  },
+  [VIEWS.RIGHTSIZING]: {
+    component: RightsizingOptimization,
+    requiresProps: []
+  },
+  [VIEWS.APPLICATIONS_UTILIZATION]: {
+    component: ApplicationsUtilization,
+    requiresProps: []
   }
 };
 

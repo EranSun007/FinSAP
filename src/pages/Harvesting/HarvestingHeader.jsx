@@ -25,6 +25,7 @@ function HarvestingHeader({
           <option value="signavio">Signavio Licenses</option>
           <option value="sac">SAP Analytics Cloud Licenses</option>
           <option value="business-ai">Business AI - HCM package Licenses</option>
+          <option value="dynamic-forms">Dynamic Forms with SAP Mobile Execution</option>
         </select>
       </div>
       <div className={styles.headerActions}>
