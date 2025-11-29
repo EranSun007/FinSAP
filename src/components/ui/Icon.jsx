@@ -29,6 +29,7 @@ function Icon({
     'bell': 'fa-bell',
     'slim-arrow-down': 'fa-chevron-down',
     'navigation-down-arrow': 'fa-chevron-down',
+    'chevron-right': 'fa-chevron-right',
     'full-screen': 'fa-expand',
     'minimize': 'fa-window-minimize',
     'decline': 'fa-xmark',

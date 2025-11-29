@@ -6,7 +6,7 @@ import JouleChat from './components/layout/JouleChat';
 import { VIEWS } from './constants/views';
 
 function App() {
-  const [activeView, setActiveView] = useState(VIEWS.WORKZONE_DETAILS);
+  const [activeView, setActiveView] = useState(VIEWS.OVERVIEW);
   const [isJouleOpen, setIsJouleOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
 
