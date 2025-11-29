@@ -1,18 +1,45 @@
-import Card, { CardHeader } from '../../components/ui/Card';
+import SACHeader from './SACHeader';
+import SACSidebar from './SACSidebar';
+import SACChart from './SACChart';
+import SACInsights from './SACInsights';
+import SACStorySummary from './SACStorySummary';
+import { useSACChart } from './useSACChart';
+import styles from '../../styles/pages/SAC.module.css';
 
 function SACDashboard() {
+  const {
+    data,
+    visibleMetrics,
+    scale,
+    setScale,
+    yAxisDomain,
+    toggleMetric,
+    toggleCategory
+  } = useSACChart();
+
   return (
-    <div style={{ animation: 'fadeIn 0.3s ease-in-out' }}>
-      <Card>
-        <CardHeader title="SAP Analytics Cloud" />
-        <div style={{ padding: '2rem', textAlign: 'center', color: 'var(--sap-text-light)' }}>
-          <h2>SAC Dashboard</h2>
-          <p>Embedded analytics and stories.</p>
+    <div className={styles.sacContainer}>
+      <SACHeader />
+      <div className={styles.sacDashboardLayout}>
+        <SACSidebar
+          visibleMetrics={visibleMetrics}
+          scale={scale}
+          onScaleChange={setScale}
+          onToggleMetric={toggleMetric}
+          onToggleCategory={toggleCategory}
+        />
+        <div className={styles.sacMainContent}>
+          <SACChart
+            data={data}
+            visibleMetrics={visibleMetrics}
+            yAxisDomain={yAxisDomain}
+          />
+          <SACInsights />
+          <SACStorySummary />
         </div>
-      </Card>
+      </div>
     </div>
   );
 }
 
 export default SACDashboard;
-

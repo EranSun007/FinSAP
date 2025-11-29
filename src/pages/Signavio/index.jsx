@@ -1,18 +1,45 @@
-import Card, { CardHeader } from '../../components/ui/Card';
+import SignavioHeader from './SignavioHeader';
+import SignavioSidebar from './SignavioSidebar';
+import SignavioChart from './SignavioChart';
+import SignavioInsights from './SignavioInsights';
+import SignavioProcessFlow from './SignavioProcessFlow';
+import { useSignavioChart } from './useSignavioChart';
+import styles from '../../styles/pages/Signavio.module.css';
 
 function Signavio() {
+  const {
+    data,
+    visibleMetrics,
+    scale,
+    setScale,
+    yAxisDomain,
+    toggleMetric,
+    toggleCategory
+  } = useSignavioChart();
+
   return (
-    <div style={{ animation: 'fadeIn 0.3s ease-in-out' }}>
-      <Card>
-        <CardHeader title="Signavio" />
-        <div style={{ padding: '2rem', textAlign: 'center', color: 'var(--sap-text-light)' }}>
-          <h2>Signavio Process Transformation</h2>
-          <p>Process analysis and mining views.</p>
+    <div className={styles.signavioContainer}>
+      <SignavioHeader />
+      <div className={styles.signavioDashboardLayout}>
+        <SignavioSidebar
+          visibleMetrics={visibleMetrics}
+          scale={scale}
+          onScaleChange={setScale}
+          onToggleMetric={toggleMetric}
+          onToggleCategory={toggleCategory}
+        />
+        <div className={styles.signavioMainContent}>
+          <SignavioChart
+            data={data}
+            visibleMetrics={visibleMetrics}
+            yAxisDomain={yAxisDomain}
+          />
+          <SignavioInsights />
+          <SignavioProcessFlow />
         </div>
-      </Card>
+      </div>
     </div>
   );
 }
 
 export default Signavio;
-

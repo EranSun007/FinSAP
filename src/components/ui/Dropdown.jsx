@@ -42,5 +42,35 @@ DropdownItem.propTypes = {
   onClick: PropTypes.func.isRequired
 };
 
-export default Dropdown;
+export function DropdownSubmenu({ label, children }) {
+  const [isOpen, setIsOpen] = useState(false);
 
+  return (
+    <div
+      className={styles.submenu}
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <div className={styles.submenuLabel}>
+        {label}
+        <Icon name="chevron-right" size="small" />
+      </div>
+      {isOpen && (
+        <div className={styles.submenuContent}>
+          {children}
+        </div>
+      )}
+    </div>
+  );
+}
+
+DropdownSubmenu.propTypes = {
+  label: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired
+};
+
+export function DropdownSeparator() {
+  return <div className={styles.separator} />;
+}
+
+export default Dropdown;

@@ -1,0 +1,699 @@
+/* BTP Prepaid Quota Dashboard Styles */
+
+.btpContainer {
+  animation: fadeIn 0.3s ease-in-out;
+  padding: 1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+.btpHeader {
+  background: linear-gradient(135deg, #0a6ed1 0%, #085cad 100%);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(10, 110, 209, 0.25);
+}
+
+.btpHeader h1 {
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.btpHeader p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+/* Summary Stats */
+.summaryStats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* Dashboard Layout */
+.btpDashboardLayout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .btpDashboardLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sidebar */
+.btpSidebar {
+  position: sticky;
+  top: 1rem;
+  height: fit-content;
+}
+
+.btpFilters {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--sap-border);
+}
+
+.filterSection {
+  margin-bottom: 1.25rem;
+}
+
+.filterSection:last-child {
+  margin-bottom: 0;
+}
+
+.filterSection h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sap-text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filterBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--sap-text);
+  transition: all 0.2s ease;
+}
+
+.filterBtn:hover {
+  background: #f8f9fa;
+  border-color: #ccc;
+}
+
+.filterBtn.active {
+  background: #e6f2ff;
+  border-color: #0a6ed1;
+  color: #0a6ed1;
+  font-weight: 500;
+}
+
+.filterCount {
+  background: #f0f0f0;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.filterBtn.active .filterCount {
+  background: #0a6ed1;
+  color: white;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.statusDot.healthy { background: #16a34a; }
+.statusDot.warning { background: #d97706; }
+.statusDot.critical { background: #dc2626; }
+
+/* Main Content */
+.btpMainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Quota Inventory */
+.quotaInventory {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--sap-border);
+}
+
+.quotaInventory h3 {
+  margin: 0 0 1.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--sap-text);
+}
+
+.quotaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1rem;
+}
+
+/* Quota Card */
+.quotaCard {
+  background: #fafbfc;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.quotaCard:hover {
+  border-color: #ccc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.quotaCard.critical {
+  border-left: 4px solid #dc2626;
+}
+
+.quotaCard.warning {
+  border-left: 4px solid #d97706;
+}
+
+.quotaCard.healthy {
+  border-left: 4px solid #16a34a;
+}
+
+.quotaCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.quotaServiceInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.quotaIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0a6ed1, #085cad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.quotaServiceName {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--sap-text);
+}
+
+.quotaDirectory {
+  font-size: 0.8rem;
+  color: var(--sap-text-light);
+  margin-top: 0.15rem;
+}
+
+.quotaTypeBadge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.quotaTypeBadge.direct {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.quotaTypeBadge.referenced {
+  background: #fae8ff;
+  color: #a21caf;
+}
+
+/* Progress Section */
+.quotaProgress {
+  margin-bottom: 1rem;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.progressLabel {
+  font-size: 0.8rem;
+  color: var(--sap-text-light);
+}
+
+.progressValue {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--sap-text);
+}
+
+.progressBarWrapper {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progressBar.healthy { background: linear-gradient(90deg, #22c55e, #16a34a); }
+.progressBar.warning { background: linear-gradient(90deg, #fbbf24, #d97706); }
+.progressBar.critical { background: linear-gradient(90deg, #f87171, #dc2626); }
+
+/* Quota Details */
+.quotaDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.quotaDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.quotaDetailLabel {
+  font-size: 0.72rem;
+  color: var(--sap-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.quotaDetailValue {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--sap-text);
+}
+
+.quotaDetailValue.warning {
+  color: #d97706;
+}
+
+.quotaDetailValue.critical {
+  color: #dc2626;
+}
+
+/* Referenced Quota Info */
+.referencedInfo {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--sap-text-light);
+}
+
+.referencedInfo svg {
+  color: #a21caf;
+}
+
+/* Burndown Chart */
+.btpChart {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--sap-border);
+  height: 350px;
+}
+
+.btpChart h3 {
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--sap-text);
+}
+
+.chartLegend {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--sap-text-light);
+}
+
+.legendDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.legendDot.remaining { background: #0a6ed1; }
+.legendDot.consumed { background: #dc2626; }
+
+/* Insights Section */
+.btpInsights {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--sap-border);
+}
+
+.insightsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.insightsHeader h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--sap-text);
+}
+
+.insightsSelect {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  background: white;
+}
+
+.insightsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.insightCard {
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid;
+  font-size: 0.9rem;
+}
+
+.insightCard strong {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.insightCard p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Empty State */
+.emptyState {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--sap-text-light);
+}
+
+.emptyState svg {
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.emptyState h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--sap-text);
+}
+
+.emptyState p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   DUAL QUOTA CARD - Special styling for 
+   services with both Direct & Referenced quotas
+   ========================================== */
+
+.dualQuotaCard {
+  grid-column: span 2;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.03) 0%, rgba(168, 85, 247, 0.05) 100%);
+  border: 2px solid rgba(124, 58, 237, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.quotaCard.clickable {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quotaCard.clickable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.2);
+  border-color: rgba(124, 58, 237, 0.4);
+}
+
+.quotaCard.clickable:focus {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+.quotaCard.clickable::after {
+  content: 'Click for details →';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: white;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transform: translateY(100%);
+  transition: transform 0.2s ease;
+}
+
+.quotaCard.clickable:hover::after {
+  transform: translateY(0);
+}
+
+.dualQuotaCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.08), transparent 70%);
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .dualQuotaCard {
+    grid-column: span 1;
+  }
+}
+
+/* Dual Badge */
+.quotaTypeBadge.dual {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: white;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
+}
+
+.quotaTypeBadge.small {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.4rem;
+}
+
+/* Dual Quota Breakdown Section */
+.dualQuotaBreakdown {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(124, 58, 237, 0.2);
+}
+
+@media (max-width: 600px) {
+  .dualQuotaBreakdown {
+    grid-template-columns: 1fr;
+  }
+}
+
+.quotaSection {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.quotaSectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.quotaSectionLabel {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--sap-text);
+}
+
+.quotaSectionMeta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--sap-text-light);
+}
+
+.quotaSectionMeta .warning {
+  color: #d97706;
+  font-weight: 600;
+}
+
+.quotaSectionMeta .healthy {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.quotaSectionMeta .critical {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* Mini Progress Bar */
+.miniProgressWrapper {
+  margin-bottom: 0.25rem;
+}
+
+.miniProgressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.miniProgressLabel {
+  font-size: 0.72rem;
+  color: var(--sap-text-light);
+}
+
+.miniProgressValue {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--sap-text);
+}
+
+.miniProgressBarWrapper {
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.miniProgressBar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.miniProgressBar.healthy { background: linear-gradient(90deg, #22c55e, #16a34a); }
+.miniProgressBar.warning { background: linear-gradient(90deg, #fbbf24, #d97706); }
+.miniProgressBar.critical { background: linear-gradient(90deg, #f87171, #dc2626); }
+
+/* Dual Quota Summary */
+.dualQuotaSummary {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  background: linear-gradient(90deg, rgba(124, 58, 237, 0.05), transparent);
+  margin: 1rem -1.25rem -1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0 0 10px 10px;
+}
+
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.summaryLabel {
+  font-size: 0.72rem;
+  color: var(--sap-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.summaryValue {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--sap-text);
+}
+
+.summaryValue.warning {
+  color: #d97706;
+}
+

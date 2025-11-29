@@ -22,10 +22,32 @@ export const navigationConfig = [
     label: 'SaaS Subscriptions',
     type: 'dropdown',
     items: [
-      { id: VIEWS.SAM, label: 'Service and Asset Manager' },
-      { id: VIEWS.PAPM, label: 'Profit and performance management' },
-      { id: VIEWS.SIGNAVIO, label: 'Signavio' },
+      // S/4 Submenu
+      {
+        id: NAV_GROUPS.S4,
+        label: 'S/4',
+        type: 'submenu',
+        items: [
+          { id: VIEWS.SAM, label: 'Service and Asset Manager' },
+          { id: VIEWS.PAPM, label: 'Profit and Performance Management' },
+        ]
+      },
+      // BTP Submenu
+      {
+        id: NAV_GROUPS.BTP_SUBMENU,
+        label: 'Business Technology Platform',
+        type: 'submenu',
+        items: [
+          { id: VIEWS.BTP, label: 'BTP Overview' },
+          { id: VIEWS.AI_CORE, label: 'AI Core' },
+          { id: VIEWS.HANA_CLOUD, label: 'HANA Cloud' },
+        ]
+      },
+      // Direct items
       { id: VIEWS.SAC, label: 'SAP Analytics Cloud' },
+      { id: VIEWS.SIGNAVIO, label: 'Signavio' },
+      // Separator
+      { type: 'separator' },
       { id: VIEWS.HARVESTING, label: 'Harvesting' },
     ]
   },
@@ -35,22 +57,25 @@ export const navigationConfig = [
     type: 'dropdown',
     items: [
       { id: VIEWS.SERVICE_MANAGER, label: 'Service Manager' },
-      { id: VIEWS.INVOICES, label: 'Invoices' },
-      { id: VIEWS.PAYMENT_HISTORY, label: 'Payment History' },
+      { id: VIEWS.TECHNICAL_ALLOCATION, label: 'Technical Allocation Dashboard' },
     ]
   },
   {
-    id: VIEWS.COST_BREAKDOWN,
+    id: NAV_GROUPS.COST_BREAKDOWN,
     label: 'Cost Breakdown',
-    type: 'direct'
+    type: 'dropdown',
+    items: [
+      { id: VIEWS.COST_BREAKDOWN_DAILY, label: 'Daily' },
+      { id: VIEWS.COST_BREAKDOWN_MONTHLY, label: 'Monthly' },
+    ]
   },
   {
     id: NAV_GROUPS.CREDIT_EXPENDITURE,
     label: 'Credit Expenditure',
     type: 'dropdown',
     items: [
-      { id: VIEWS.USAGE_HISTORY, label: 'Usage History' },
-      { id: VIEWS.FORECAST, label: 'Forecast' },
+      { id: VIEWS.CREDITS_CONSUMPTION, label: 'Credits Consumption' },
+      { id: VIEWS.CREDIT_PROJECTION, label: 'Credit Projection' },
     ]
   },
   {
@@ -58,8 +83,11 @@ export const navigationConfig = [
     label: 'Cross Charging',
     type: 'dropdown',
     items: [
-      { id: VIEWS.INTERNAL_BILLING, label: 'Internal Billing' },
-      { id: VIEWS.REPORTS, label: 'Reports' },
+      { id: VIEWS.MANAGE_TAGS, label: 'Manage Tags' },
+      { id: VIEWS.COST_BY_TAGS_DAILY, label: 'Cost By Tags - Daily' },
+      { id: VIEWS.COST_BY_TAGS_MONTHLY, label: 'Cost By Tags - Monthly' },
+      { id: VIEWS.DASHBOARD_DAILY, label: 'Dashboard - Daily' },
+      { id: VIEWS.DASHBOARD_MONTHLY, label: 'Dashboard - Monthly' },
     ]
   },
   {

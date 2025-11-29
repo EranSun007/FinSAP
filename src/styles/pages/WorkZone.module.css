@@ -1,0 +1,366 @@
+/* SAP Build Work Zone - Prepaid Quota Dashboard Styles */
+
+.container {
+  animation: fadeIn 0.3s ease-in-out;
+  padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.header {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--sap-border);
+}
+
+.headerTop {
+  margin-bottom: 1rem;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #f5f6f7;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  color: #0a6ed1;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  background: #e8f4fd;
+  border-color: #0a6ed1;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.headerIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0a6ed1 0%, #085cad 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.headerText h1 {
+  color: #0a6ed1;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.subtitle {
+  color: #6a6d70;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ==========================================
+   KPI GRID
+   ========================================== */
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.kpiCard {
+  background: white;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kpiCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.kpiCard.direct {
+  border-left-color: #0a6ed1;
+}
+
+.kpiCard.referenced {
+  border-left-color: #e9730c;
+}
+
+.kpiCard.dynamic {
+  border-left-color: #107e3e;
+}
+
+.kpiCard.total {
+  border-left-color: #5d36ff;
+}
+
+.kpiLabel {
+  color: #6a6d70;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.kpiValue {
+  color: #32363a;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  line-height: 1.1;
+}
+
+.kpiSubtext {
+  color: #6a6d70;
+  font-size: 0.85rem;
+}
+
+/* ==========================================
+   FORMULA BOX
+   ========================================== */
+
+.formulaBox {
+  background: white;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #5d36ff;
+}
+
+.formulaTitle {
+  font-weight: 600;
+  color: #32363a;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.formulaText {
+  font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  font-size: 0.9rem;
+  color: #32363a;
+  background: #f5f6f7;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.formulaDivider {
+  height: 1px;
+  background: #e5e5e5;
+  margin: 1rem 0;
+}
+
+.formulaCalculation {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  font-size: 0.9rem;
+}
+
+.formulaResult {
+  background: linear-gradient(135deg, #5d36ff 0%, #7c5ce0 100%);
+  color: white;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.formulaEquals {
+  color: #6a6d70;
+  font-weight: 600;
+}
+
+.formulaPlus {
+  color: #6a6d70;
+  font-weight: 600;
+}
+
+.formulaDirect {
+  background: #e0f3ff;
+  color: #0a6ed1;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+}
+
+.formulaReferenced {
+  background: #fff3e0;
+  color: #e9730c;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+}
+
+.formulaDynamic {
+  background: #e6f4ea;
+  color: #107e3e;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+}
+
+/* ==========================================
+   CHART CONTAINERS
+   ========================================== */
+
+.chartContainer {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--sap-border);
+}
+
+.chartTitle {
+  color: #32363a;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.chartWrapper {
+  position: relative;
+  height: 400px;
+}
+
+/* ==========================================
+   TABLE CONTAINER
+   ========================================== */
+
+.tableContainer {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--sap-border);
+  overflow-x: auto;
+}
+
+.tableTitle {
+  color: #32363a;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.monoText {
+  font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  font-size: 0.85rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.badge.direct {
+  background: #e0f3ff;
+  color: #0a6ed1;
+}
+
+.badge.referenced {
+  background: #fff3e0;
+  color: #e9730c;
+}
+
+.badge.dynamic {
+  background: #e6f4ea;
+  color: #107e3e;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.statusBadge.active {
+  background: #e6f4ea;
+  color: #107e3e;
+}
+
+.totalRow {
+  background: #f5f6f7;
+}
+
+.totalRow td {
+  font-weight: 600;
+  border-top: 2px solid #e5e5e5;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0.75rem;
+  }
+
+  .header {
+    padding: 1rem;
+  }
+
+  .headerContent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .headerText h1 {
+    font-size: 1.25rem;
+  }
+
+  .kpiGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .kpiValue {
+    font-size: 1.75rem;
+  }
+
+  .formulaCalculation {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chartWrapper {
+    height: 300px;
+  }
+}
+

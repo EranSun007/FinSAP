@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Dropdown, { DropdownItem } from '../../../components/ui/Dropdown';
-import Button from '../../../components/ui/Button';
-import styles from '../../../styles/pages/ServiceManager.module.css';
+import Dropdown, { DropdownItem } from '../../components/ui/Dropdown';
+import Button from '../../components/ui/Button';
+import styles from '../../styles/pages/ServiceManager.module.css';
 
 function ServiceManagerFilters({ onFilterChange, onApplyFilters }) {
   const [filters, setFilters] = useState({

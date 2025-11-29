@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Table, TableHead, TableBody, TableRow, TableHeader, TableCell } from '../../../components/ui/Table';
-import ProgressBar from '../../../components/ui/ProgressBar';
-import styles from '../../../styles/pages/ServiceManager.module.css';
+import { Table, TableHead, TableBody, TableRow, TableHeader, TableCell } from '../../components/ui/Table';
+import ProgressBar from '../../components/ui/ProgressBar';
+import styles from '../../styles/pages/ServiceManager.module.css';
 
 function ServiceManagerTable({ data, loading }) {
   const [selectedRows, setSelectedRows] = useState(new Set());

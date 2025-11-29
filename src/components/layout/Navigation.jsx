@@ -1,7 +1,45 @@
 import PropTypes from 'prop-types';
-import Dropdown, { DropdownItem } from '../ui/Dropdown';
+import Dropdown, { DropdownItem, DropdownSubmenu, DropdownSeparator } from '../ui/Dropdown';
 import { navigationConfig } from '../../config/navigation.config';
 import styles from '../../styles/components/Navigation.module.css';
+
+/**
+ * Render dropdown items recursively (supports submenus and separators)
+ */
+function renderDropdownItems(items, onNavigate) {
+  return items.map((item, index) => {
+    // Handle separator
+    if (item.type === 'separator') {
+      return <DropdownSeparator key={`separator-${index}`} />;
+    }
+
+    // Handle submenu
+    if (item.type === 'submenu') {
+      return (
+        <DropdownSubmenu key={item.id} label={item.label}>
+          {item.items.map((subItem) => (
+            <DropdownItem
+              key={subItem.id}
+              onClick={() => onNavigate(subItem.id)}
+            >
+              {subItem.label}
+            </DropdownItem>
+          ))}
+        </DropdownSubmenu>
+      );
+    }
+
+    // Handle regular dropdown item
+    return (
+      <DropdownItem
+        key={item.id}
+        onClick={() => onNavigate(item.id)}
+      >
+        {item.label}
+      </DropdownItem>
+    );
+  });
+}
 
 function Navigation({ activeView, onNavigate, isJouleOpen, onToggleJoule}) {
   return (
@@ -11,14 +49,7 @@ function Navigation({ activeView, onNavigate, isJouleOpen, onToggleJoule}) {
         if (item.type === 'dropdown') {
           return (
             <Dropdown key={item.id} label={item.label}>
-              {item.items.map((dropdownItem) => (
-                <DropdownItem
-                  key={dropdownItem.id}
-                  onClick={() => onNavigate(dropdownItem.id)}
-                >
-                  {dropdownItem.label}
-                </DropdownItem>
-              ))}
+              {renderDropdownItems(item.items, onNavigate)}
             </Dropdown>
           );
         }
@@ -59,4 +90,3 @@ Navigation.propTypes = {
 };
 
 export default Navigation;
-

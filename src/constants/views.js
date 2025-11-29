@@ -15,27 +15,41 @@
 export const VIEWS = {
   // Main pages
   OVERVIEW: 'overview',
-  COST_BREAKDOWN: 'cost-breakdown',
 
-  // SaaS Subscriptions
+  // SaaS Subscriptions - S/4
   SAM: 'sam',
   PAPM: 'papm',
-  SIGNAVIO: 'signavio',
+
+  // SaaS Subscriptions - BTP
+  BTP: 'btp',
+  WORKZONE_DETAILS: 'workzone-details',
+  AI_CORE: 'ai-core',
+  HANA_CLOUD: 'hana-cloud',
+
+  // SaaS Subscriptions - Other
   SAC: 'sac',
+  SIGNAVIO: 'signavio',
   HARVESTING: 'harvesting',
 
   // Billing Verification
   SERVICE_MANAGER: 'service-manager',
-  INVOICES: 'invoices',
-  PAYMENT_HISTORY: 'payment-history',
+  TECHNICAL_ALLOCATION: 'technical-allocation',
+
+  // Cost Breakdown
+  COST_BREAKDOWN: 'cost-breakdown',
+  COST_BREAKDOWN_DAILY: 'cost-breakdown-daily',
+  COST_BREAKDOWN_MONTHLY: 'cost-breakdown-monthly',
 
   // Credit Expenditure
-  USAGE_HISTORY: 'usage-history',
-  FORECAST: 'forecast',
+  CREDITS_CONSUMPTION: 'credits-consumption',
+  CREDIT_PROJECTION: 'credit-projection',
 
   // Cross Charging
-  INTERNAL_BILLING: 'internal-billing',
-  REPORTS: 'reports',
+  MANAGE_TAGS: 'manage-tags',
+  COST_BY_TAGS_DAILY: 'cost-by-tags-daily',
+  COST_BY_TAGS_MONTHLY: 'cost-by-tags-monthly',
+  DASHBOARD_DAILY: 'dashboard-daily',
+  DASHBOARD_MONTHLY: 'dashboard-monthly',
 
   // Other
   MONITORING_ALERTING: 'monitoring-alerting',
@@ -54,7 +68,10 @@ export const VIEWS = {
  */
 export const NAV_GROUPS = {
   SAAS_SUBSCRIPTIONS: 'saas-subscriptions',
+  S4: 's4-submenu',
+  BTP_SUBMENU: 'btp-submenu',
   BILLING_VERIFICATION: 'billing-verification',
+  COST_BREAKDOWN: 'cost-breakdown-group',
   CREDIT_EXPENDITURE: 'credit-expenditure',
   CROSS_CHARGING: 'cross-charging',
   COST_OPTIMIZATION: 'cost-optimization'

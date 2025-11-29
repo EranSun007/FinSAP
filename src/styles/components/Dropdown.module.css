@@ -14,7 +14,7 @@
   display: block;
   position: absolute;
   background-color: var(--sap-white);
-  min-width: 240px;
+  min-width: 280px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 1000;
   top: 100%;
@@ -38,3 +38,49 @@
   color: var(--sap-blue);
 }
 
+/* Submenu Styles */
+.submenu {
+  position: relative;
+}
+
+.submenuLabel {
+  color: var(--sap-text);
+  padding: 10px 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.submenuLabel:hover {
+  background-color: #f5f7fa;
+  color: var(--sap-blue);
+}
+
+.submenuLabel svg {
+  opacity: 0.5;
+  margin-left: 8px;
+}
+
+.submenuContent {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: var(--sap-white);
+  min-width: 240px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: 1px solid var(--sap-border);
+  padding: 0.5rem 0;
+  z-index: 1001;
+}
+
+/* Separator */
+.separator {
+  height: 1px;
+  background: var(--sap-border);
+  margin: 0.5rem 0;
+}

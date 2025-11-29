@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import Card, { CardHeader } from '../../../components/ui/Card';
+import Card, { CardHeader } from '../../components/ui/Card';
 import ServiceManagerFilters from './ServiceManagerFilters';
 import ServiceManagerTable from './ServiceManagerTable';
 import useServiceData from './useServiceData';
-import Button from '../../../components/ui/Button';
-import styles from '../../../styles/pages/ServiceManager.module.css';
+import Button from '../../components/ui/Button';
+import styles from '../../styles/pages/ServiceManager.module.css';
 
 function ServiceManager() {
   const [filters, setFilters] = useState({
