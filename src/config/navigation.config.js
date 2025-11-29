@@ -39,7 +39,7 @@ export const navigationConfig = [
         type: 'submenu',
         items: [
           { id: VIEWS.BTP, label: 'BTP Overview' },
-          { id: VIEWS.AI_CORE, label: 'AI Core' },
+          { id: VIEWS.WORKZONE_DETAILS, label: 'Work Zone' },
           { id: VIEWS.HANA_CLOUD, label: 'HANA Cloud' },
         ]
       },
