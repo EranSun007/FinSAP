@@ -17,7 +17,7 @@ function WorkZoneHeader({ metadata, onBack }) {
         <div className={styles.headerText}>
           <h1>{metadata.title}</h1>
           <p className={styles.subtitle}>
-            Global Account: {metadata.globalAccount} | Period: {metadata.period}
+            Period: {metadata.period}
           </p>
         </div>
       </div>
