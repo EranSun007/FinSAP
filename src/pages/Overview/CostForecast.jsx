@@ -7,7 +7,7 @@ import styles from '../../styles/components/CostForecast.module.css';
 function CostForecast() {
   const insights = [
     {
-      name: 'BTP EA',
+      name: 'CPEA',
       current: '12,450 USD',
       forecast: '15,200 USD',
       forecastPct: 122,
@@ -24,7 +24,7 @@ function CostForecast() {
     },
     {
         name: 'HANA Cloud Service',
-        current: 'Leading BTP EA',
+        current: 'Leading CPEA',
         forecast: 'High Impact',
         forecastPct: 135,
         action: 'upsell',
@@ -60,7 +60,7 @@ function CostForecast() {
     <Card>
       <CardHeader
         title="Cost and Forecast"
-        subtitle="BTP EA + Business AI"
+        subtitle="CPEA + Business AI"
         action={
           <div className={styles.headerRight}>
             <div className={styles.headerValue}>24.3k</div>

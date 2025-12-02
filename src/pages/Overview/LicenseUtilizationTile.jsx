@@ -5,6 +5,8 @@ import {
   BarElement,
   LineElement,
   PointElement,
+  BarController,
+  LineController,
   Title,
   Tooltip,
   Legend
@@ -21,14 +23,16 @@ ChartJS.register(
   BarElement,
   LineElement,
   PointElement,
+  BarController,
+  LineController,
   Title,
   Tooltip,
   Legend
 );
 
 const LicenseUtilizationTile = () => {
-  // Process data for chart
-  const labels = licenseUtilizationData.map(d => d.name);
+  // Process data for chart - use shortName for chart axis labels
+  const labels = licenseUtilizationData.map(d => d.shortName || d.name);
   
   const currentUtilization = licenseUtilizationData.map(d => (d.used / d.contracted) * 100);
   const unusedPercent = licenseUtilizationData.map(d => ((d.contracted - d.used) / d.contracted) * 100);

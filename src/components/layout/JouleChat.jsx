@@ -27,7 +27,7 @@ function JouleChat({ isOpen, onClose }) {
     <div className={`${styles.jouleOverlay} ${isOpen ? styles.open : ''}`}>
       <div className={styles.jouleHeader}>
         <div className={styles.headerLeft}>
-          <span className={styles.headerTitle}>Joule for FinOps</span>
+          <span className={styles.headerTitle}>FinOps Agents</span>
         </div>
         <div className={styles.headerRight}>
           <button className={styles.iconButton} aria-label="Minimize">

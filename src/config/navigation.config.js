@@ -28,7 +28,7 @@ export const navigationConfig = [
         label: 'S/4',
         type: 'submenu',
         items: [
-          { id: VIEWS.SAM, label: 'Service and Asset Manager' },
+          { id: VIEWS.SAM, label: 'SAP Mobile Execution' },
           { id: VIEWS.PAPM, label: 'Profit and Performance Management' },
         ]
       },
@@ -106,7 +106,7 @@ export const navigationConfig = [
   },
   {
     id: VIEWS.JOULE,
-    label: 'Joule',
-    type: 'special' // Special handling for Joule chat panel
+    label: 'AI Agents',
+    type: 'special' // Special handling for AI Agents chat panel
   },
 ];

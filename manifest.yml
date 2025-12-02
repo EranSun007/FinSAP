@@ -1,0 +1,10 @@
+---
+applications:
+  - name: fin2-app
+    memory: 128M
+    disk_quota: 256M
+    buildpacks:
+      - staticfile_buildpack
+    path: dist
+    random-route: true
+

@@ -5,6 +5,8 @@ import {
   BarElement,
   LineElement,
   PointElement,
+  BarController,
+  LineController,
   Title,
   Tooltip,
   Legend,
@@ -17,6 +19,8 @@ ChartJS.register(
   BarElement,
   LineElement,
   PointElement,
+  BarController,
+  LineController,
   Title,
   Tooltip,
   Legend
@@ -28,7 +32,7 @@ function BarLineChart({ days, btpeaData, businessAIData, legendPosition = 'botto
     datasets: [
       {
         type: 'bar',
-        label: 'BTP EA Cost',
+        label: 'CPEA Cost',
         data: btpeaData.costData,
         backgroundColor: (context) => {
             const index = context.dataIndex;
@@ -38,7 +42,7 @@ function BarLineChart({ days, btpeaData, businessAIData, legendPosition = 'botto
       },
       {
         type: 'line',
-        label: 'BTP EA Forecast',
+        label: 'CPEA Forecast',
         data: btpeaData.forecastData,
         borderColor: '#005f5f',
         borderWidth: 2,

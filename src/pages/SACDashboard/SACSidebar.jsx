@@ -116,3 +116,5 @@ function SACSidebar({ visibleMetrics, scale, onScaleChange, onToggleMetric, onTo
 
 export default SACSidebar;
 
+
+

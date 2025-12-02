@@ -116,3 +116,5 @@ function SignavioSidebar({ visibleMetrics, scale, onScaleChange, onToggleMetric,
 
 export default SignavioSidebar;
 
+
+

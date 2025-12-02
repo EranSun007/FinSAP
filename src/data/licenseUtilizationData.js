@@ -1,6 +1,7 @@
 export const licenseUtilizationData = [
   {
     name: 'Signavio',
+    shortName: 'Signavio',
     sub: 'Users',
     contracted: 800,
     used: 614,
@@ -11,7 +12,8 @@ export const licenseUtilizationData = [
     action: 'upsell'
   },
   {
-    name: 'SaSM',
+    name: 'SAP Mobile Execution',
+    shortName: 'SME',
     sub: 'Tenants',
     contracted: 800,
     used: 637,
@@ -22,7 +24,8 @@ export const licenseUtilizationData = [
     action: 'monitor'
   },
   {
-    name: 'PaPM',
+    name: 'Profitability and Performance Management',
+    shortName: 'PaPM',
     sub: 'Capacity Units',
     contracted: 360,
     used: 368,
@@ -33,7 +36,8 @@ export const licenseUtilizationData = [
     action: 'monitor'
   },
   {
-    name: 'SAC',
+    name: 'SAP Analytics Cloud',
+    shortName: 'SAC',
     sub: 'Active Users',
     contracted: 270,
     used: 135,
